@@ -1,0 +1,45 @@
+{
+  "name": "react-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel public/index.html",
+    "build": "rm -rf dist && parcel build public/index.html --public-url /ITMS-Frontend/",
+    "deploy": "npm run build && copyfiles public/robots.txt dist && gh-pages -d dist",
+    "analyse": "source-map-explorer dist/public.*",
+    "test:eslint": "eslint src/ --ext .js --ext .jsx",
+    "test": "jest --runInBand --detectOpenHandles --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.5",
+    "@testing-library/user-event": "^12.0.11",
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.1.0",
+    "jest-styled-components": "^7.0.2",
+    "sass": "^1.26.10",
+    "source-map-explorer": "^2.4.0",
+    "styled-components": "^5.1.1"
+  },
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-textarea-autosize": "^7.1.2"
+  },
+  "alias": {
+    "#": "/../src"
+  }
+}

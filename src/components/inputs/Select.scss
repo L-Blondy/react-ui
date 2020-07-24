@@ -1,0 +1,158 @@
+$focus-color: #0096d0;
+$border-color: #ddd;
+$height: 1.7rem;
+$width: 200px;
+
+.cs {
+
+   &--select,
+   &--select * {
+      box-sizing: border-box;
+   }
+
+   &--display,
+   &--input,
+   &--menu {
+      font-family: inherit;
+   }
+
+   &--select {
+      position: relative;
+      display: inline-flex;
+      height: $height;
+      line-height: $height;
+      border: 1px solid $border-color;
+      width: $width;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   &--select.focus-within {
+      border: 1px solid $focus-color
+   }
+
+   &--display {
+      position: relative;
+      height: inherit;
+      flex-grow: 1;
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+
+      &:hover {
+         cursor: text;
+      }
+
+      &--hide {
+         color: transparent;
+      }
+   }
+
+   &--input {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: calc(100% - 30px);
+      transform: translateY(-50%);
+      font-size: inherit;
+      height: inherit;
+      background: transparent;
+      border: none;
+   }
+
+   &--input--hide {
+      opacity: 0;
+      height: 0;
+   }
+
+   &--input:focus {
+      outline: none;
+   }
+
+   &--input::placeholder {
+      color: #aaa;
+   }
+
+   &--menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      overflow: hidden;
+   }
+
+   &--menu>ul {
+      transform: translateY(-100%);
+      border: 1px solid #ddd;
+      pointer-events: auto;
+      list-style: none;
+      background: white;
+   }
+
+   &--menu--show>ul {
+      animation: showMenu 200ms forwards;
+
+      @keyframes showMenu {
+         to {
+            transform: translateY(0)
+         }
+      }
+   }
+
+   &--option {
+      background: white;
+   }
+
+   &--option--none {
+      opacity: 0.5;
+   }
+
+   &--option--selected {
+      background: lightblue;
+   }
+
+
+
+   &--arrow {
+      position: absolute;
+      height: 100%;
+      width: 30px;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+
+      &__wrapper {
+         position: relative;
+         height: 100%;
+         width: 100%;
+
+         &::after,
+         &::before {
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 10px;
+            background: #666;
+            top: 50%;
+            border-radius: 2px;
+         }
+
+         &::before {
+            right: calc(50% - 2px);
+            transform: translateY(-50%) rotate(45deg)
+         }
+
+         &::after {
+            left: calc(50% - 2px);
+            transform: translateY(-50%) rotate(-45deg)
+         }
+      }
+
+      &.up {
+         transform: rotate(180deg);
+      }
+   }
+}
