@@ -3,7 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
-import { Textarea } from '#/components/inputs';
+import { Textarea } from '#/components';
 
 test('render TextArea', () => {
 

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
-import { Input } from '#/components/inputs';
+import { Input } from '#/components';
 
 test('render Input', () => {
 

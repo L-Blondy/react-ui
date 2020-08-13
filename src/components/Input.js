@@ -1,5 +1,5 @@
 import React, { useState, forwardRef } from 'react';
-import Errors from '#/components/errors/Errors';
+import Errors from '#/components/Errors';
 
 function Input({
 	defaultValue = '',
@@ -11,7 +11,7 @@ function Input({
 	as: Style = 'span',
 	inputTag: InputTag = 'input',
 	className = '',
-	inputClassName = 'ci-input',
+	inputClassName,
 	...props
 }, ref) {
 
@@ -30,7 +30,7 @@ function Input({
 			</label>
 
 			<InputTag
-				className={ inputClassName }
+				className={ inputClassName || 'ci-input' }
 				id={ name + '-' + label }
 				name={ name }
 				placeholder={ placeholder }

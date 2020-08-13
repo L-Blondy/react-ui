@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Input, Textarea, Select } from '#/components/inputs';
+import { Input, Textarea, Select } from '#/components';
+import { getCities } from '#/API';
 
 function App() {
 
@@ -43,20 +44,16 @@ function App() {
 
 				<div>
 					<Select
-						className='customize-select'
-						value={ selectVal }
-						onChange={ e => console.log('onChange:', e.target) }
-						onInputChange={ e => { } }
 						placeholder='Select...'
 						name='select-name'
-						options={ [
-							{ value: 12, display: 1200 },
-							{ value: 13, display: 1300 },
-							{ value: 23, display: 2300 },
-							{ value: 24, display: 2400 },
-						] }
+						options={ [ 'opt1', 'opt2', 'tel1', 'tel2', 'wap1', 'wap2' ] }
+						maxMenuHeight={ '150px' }
+					//value={ selectVal }
+					//onChange={ setSelectVal }
 					/>
 				</div>
+
+				<br />
 			</div>
 
 		</div>
@@ -64,3 +61,4 @@ function App() {
 }
 
 export default App;
+

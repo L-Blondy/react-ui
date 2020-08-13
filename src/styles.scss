@@ -4,6 +4,7 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
+   font-family: Roboto;
 }
 
 body,
@@ -11,15 +12,41 @@ html {
    height: 100%;
 }
 
-body .customize-select {
-   font-family: Roboto;
-   padding-left: 0.5rem;
-   line-height: 2rem;
-   height: 2rem;
-   color: #444;
-   margin-left: 2rem;
+.ci-select,
+.ci-select * {
+   box-sizing: border-box;
+}
 
-   li {
-      padding-left: 0.5rem;
+.ci-select {
+   $padding: 0 0.35em;
+
+   display: inline-flex;
+   flex-direction: column;
+   line-height: 1.7rem;
+
+   &__input {
+      font-size: inherit;
+      line-height: inherit;
+      font-family: inherit;
+      padding: $padding;
+   }
+
+   &__menu {
+      list-style: none;
+      border: 1px solid #aaa;
+      overflow-Y: auto;
+
+      &__option {
+         padding: $padding;
+
+         &--highlight {
+            background: lightblue;
+         }
+      }
+
+      &__no-options {
+         text-align: center;
+         color: #999;
+      }
    }
 }
