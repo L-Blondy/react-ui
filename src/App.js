@@ -52,6 +52,16 @@ function App() {
 					//onChange={ setSelectVal }
 					/>
 				</div>
+				{/* 
+				<div>
+					<Select
+						placeholder='Select...'
+						name='select-name'
+						options={ [ 'opt1', 'opt2', 'tel1', 'tel2', 'wap1', 'wap2' ] }
+						value={ selectVal }
+						onChange={ setSelectVal }
+					/>
+				</div> */}
 
 				<br />
 			</div>

@@ -122,6 +122,6 @@ function SelectBase({
 			/>
 		</span>
 	);
-};
+}
 
 export default React.forwardRef(SelectBase);
